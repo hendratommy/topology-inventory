@@ -1,4 +1,7 @@
-package dev.hendratommy.training.inventory.domain;
+package dev.hendratommy.training.inventory.domain.entity;
+
+import dev.hendratommy.training.inventory.domain.vo.RouterId;
+import dev.hendratommy.training.inventory.domain.vo.RouterType;
 
 import java.util.List;
 import java.util.function.Predicate;
@@ -29,21 +32,15 @@ public class Router {
         return p -> p.getRouterType() == RouterType.EDGE;
     }
 
-    public static List<Router> retrieveRouter(List<Router> routers, Predicate<Router> predicate){
-        return routers.stream()
-                .filter(predicate)
-                .collect(Collectors.<Router>toList());
-    }
-
     public RouterType getRouterType(){
         return routerType;
     }
 
     @Override
     public String toString(){
-        return "Router{" +
-                "routerType=" + routerType +
-                ", routerId=" + routerId +
-                '}';
+        return new StringBuilder("Router{")
+                .append("routerType=").append(routerType)
+                .append(", routerId=").append(routerId)
+                .append("}").toString();
     }
 }

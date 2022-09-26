@@ -1,7 +1,7 @@
 package dev.hendratommy.training.inventory.application.port.input;
 
 import dev.hendratommy.training.inventory.application.port.output.RouterViewOutputPort;
-import dev.hendratommy.training.inventory.domain.Router;
+import dev.hendratommy.training.inventory.domain.entity.Router;
 import dev.hendratommy.training.inventory.application.usecase.RouterViewUseCase;
 
 import java.util.List;

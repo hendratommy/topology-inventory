@@ -1,6 +1,6 @@
 package dev.hendratommy.training.inventory.application.usecase;
 
-import dev.hendratommy.training.inventory.domain.Router;
+import dev.hendratommy.training.inventory.domain.entity.Router;
 
 import java.util.List;
 import java.util.function.Predicate;

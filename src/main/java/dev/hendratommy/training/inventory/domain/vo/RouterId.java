@@ -1,4 +1,4 @@
-package dev.hendratommy.training.inventory.domain;
+package dev.hendratommy.training.inventory.domain.vo;
 
 import java.util.UUID;
 
@@ -16,8 +16,7 @@ public class RouterId {
     @Override
     public String toString() {
         return new StringBuilder("RouterId{")
-                .append("id='")
-                .append(this.id.toString())
+                .append("id='").append(this.id.toString())
                 .append("'}").toString();
     }
 }

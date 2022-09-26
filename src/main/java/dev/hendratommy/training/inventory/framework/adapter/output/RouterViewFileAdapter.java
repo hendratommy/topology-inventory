@@ -1,9 +1,9 @@
 package dev.hendratommy.training.inventory.framework.adapter.output;
 
-import dev.hendratommy.training.inventory.domain.RouterType;
+import dev.hendratommy.training.inventory.domain.vo.RouterType;
 import dev.hendratommy.training.inventory.application.port.output.RouterViewOutputPort;
-import dev.hendratommy.training.inventory.domain.Router;
-import dev.hendratommy.training.inventory.domain.RouterId;
+import dev.hendratommy.training.inventory.domain.entity.Router;
+import dev.hendratommy.training.inventory.domain.vo.RouterId;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

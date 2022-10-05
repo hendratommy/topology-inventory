@@ -13,6 +13,10 @@ public class RouterId {
         this.id = UUID.fromString(id);
     }
 
+    public UUID getId() {
+        return id;
+    }
+
     @Override
     public String toString() {
         return new StringBuilder("RouterId{")

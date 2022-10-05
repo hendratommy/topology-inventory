@@ -1,4 +1,4 @@
-package dev.hexastack.training.inventory.framework.adapter;
+package dev.hexastack.training.inventory.framework.adapter.input;
 
 import dev.hendratommy.training.inventory.framework.adapter.input.RouterViewCLIAdapter;
 import org.junit.jupiter.api.Test;

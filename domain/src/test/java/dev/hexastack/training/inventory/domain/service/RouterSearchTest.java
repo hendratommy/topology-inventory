@@ -16,11 +16,13 @@ public class RouterSearchTest {
         routers.add(new Router(new RouterId(), RouterType.EDGE));
         routers.add(new Router(new RouterId(), RouterType.EDGE));
 
-        var cores = RouterSearch.retrieveRouter(routers, Router.filterRouterByType(RouterType.CORE));
+        var routerSearch = new RouterSearch();
+
+        var cores = routerSearch.retrieveRouter(RouterType.CORE, routers);
         assert cores != null : "CORE routers should not be null";
         assert cores.size() == 1 : "CORE routers size should equals 1";
 
-        var edges = RouterSearch.retrieveRouter(routers, Router.filterRouterByType(RouterType.EDGE));
+        var edges = routerSearch.retrieveRouter(RouterType.EDGE, routers);
         assert edges != null : "EDGE routers should not be null";
         assert edges.size() == 2 : "EDGE routers size should equals 2";
     }

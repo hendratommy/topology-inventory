@@ -9,6 +9,6 @@ public class RouterTypeSpecification extends AbstractSpecification<Router> {
 
     @Override
     public boolean isSatisfiedBy(Router router) {
-        return router.getRouterType().equals(RouterType.EDGE) || router.getRouterType().equals(RouterType.CORE);
+        return router.getType().equals(RouterType.EDGE) || router.getType().equals(RouterType.CORE);
     }
 }

@@ -3,7 +3,7 @@ package dev.hexastack.training.inventory.framework.adapter.input;
 import dev.hendratommy.training.inventory.domain.vo.IP;
 import dev.hendratommy.training.inventory.domain.vo.Network;
 import dev.hendratommy.training.inventory.domain.vo.RouterId;
-import dev.hendratommy.training.inventory.framework.adapter.input.RouterNetworkCLIAdapter;
+import dev.hendratommy.training.inventory.framework.adapter.input.cli.RouterNetworkCLIAdapter;
 import org.junit.jupiter.api.Test;
 
 public class RouterNetworkCLIAdapterTest {

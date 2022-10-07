@@ -4,6 +4,7 @@ import dev.hendratommy.training.inventory.application.repository.RouterRepositor
 import dev.hendratommy.training.inventory.domain.entity.Router;
 import dev.hendratommy.training.inventory.application.usecase.RouterViewUseCase;
 import dev.hendratommy.training.inventory.domain.service.RouterSearch;
+import dev.hendratommy.training.inventory.domain.vo.RouterType;
 
 import java.util.List;
 import java.util.function.Predicate;
@@ -18,8 +19,8 @@ public class RouterViewService implements RouterViewUseCase {
     }
 
     @Override
-    public List<Router> getRouters(Predicate<Router> filter) {
+    public List<Router> getRelatedRouters(RouterType type) {
         var routers = routerRepository.findAll();
-        return routerSearch.retrieveRouter(routers, filter);
+        return routerSearch.retrieveRouter(type, routers);
     }
 }

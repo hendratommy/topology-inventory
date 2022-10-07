@@ -1,4 +1,4 @@
-package dev.hendratommy.training.inventory.framework.adapter.input;
+package dev.hendratommy.training.inventory.framework.adapter.input.cli;
 
 import dev.hendratommy.training.inventory.application.service.RouterNetworkService;
 import dev.hendratommy.training.inventory.application.usecase.RouterNetworkUseCase;

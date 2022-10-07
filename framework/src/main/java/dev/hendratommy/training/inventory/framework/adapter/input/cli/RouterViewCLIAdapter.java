@@ -1,4 +1,4 @@
-package dev.hendratommy.training.inventory.framework.adapter.input;
+package dev.hendratommy.training.inventory.framework.adapter.input.cli;
 
 import dev.hendratommy.training.inventory.application.service.RouterViewService;
 import dev.hendratommy.training.inventory.application.usecase.RouterViewUseCase;
@@ -12,16 +12,11 @@ import java.util.List;
 public class RouterViewCLIAdapter {
     RouterViewUseCase routerViewUseCase;
 
-    public RouterViewCLIAdapter() {
-        setAdapters();
+    public RouterViewCLIAdapter(RouterViewUseCase routerViewUseCase) {
+        this.routerViewUseCase = routerViewUseCase;
     }
 
     public List<Router> obtainRelatedRouters(String type) {
-        return routerViewUseCase.getRouters(
-                Router.filterRouterByType(RouterType.valueOf(type)));
-    }
-
-    private void setAdapters() {
-        this.routerViewUseCase = new RouterViewService(RouterRepositoryFileAdapter.getInstance(), new RouterSearch());
+        return routerViewUseCase.getRelatedRouters(RouterType.valueOf(type));
     }
 }

@@ -1,12 +1,16 @@
 package dev.hexastack.training.inventory.framework.adapter.input;
 
-import dev.hendratommy.training.inventory.framework.adapter.input.RouterViewCLIAdapter;
+import dev.hendratommy.training.inventory.application.service.RouterViewService;
+import dev.hendratommy.training.inventory.domain.service.RouterSearch;
+import dev.hendratommy.training.inventory.framework.adapter.input.cli.RouterViewCLIAdapter;
+import dev.hendratommy.training.inventory.framework.adapter.output.RouterRepositoryFileAdapter;
 import org.junit.jupiter.api.Test;
 
 public class RouterViewCLIAdapterTest {
     @Test
     void testObtainRelatedRoutersByType() {
-        var cli = new RouterViewCLIAdapter();
+        var routerViewUseCase = new RouterViewService(RouterRepositoryFileAdapter.getInstance(), new RouterSearch());
+        var cli = new RouterViewCLIAdapter(routerViewUseCase);
         var cores = cli.obtainRelatedRouters("CORE");
         assert cores != null : "CORE routers should not be null";
         assert cores.size() == 1 : "CORE routers size should equals 1";

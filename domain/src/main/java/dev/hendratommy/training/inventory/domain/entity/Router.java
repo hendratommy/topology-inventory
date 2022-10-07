@@ -18,9 +18,9 @@ public class Router {
         this.routerType = routerType;
     }
 
-    public Router(RouterType routerType, RouterId routerId, Switch networkSwitch) {
-        this.routerType = routerType;
+    public Router(RouterId routerId, RouterType routerType, Switch networkSwitch) {
         this.routerId = routerId;
+        this.routerType = routerType;
         this.networkSwitch = networkSwitch;
     }
 

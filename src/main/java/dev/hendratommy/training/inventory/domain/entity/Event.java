@@ -11,15 +11,14 @@ import java.time.OffsetDateTime;
 import java.util.Objects;
 
 public class Event implements Comparable<Event> {
-
-    private OffsetDateTime timestamp;
     private EventId id;
+    private OffsetDateTime timestamp;
     private Protocol protocol;
     private Activity activity;
 
-    public Event(OffsetDateTime timestamp, EventId id, Protocol protocol, Activity activity){
-        this.timestamp = timestamp;
+    public Event(EventId id, OffsetDateTime timestamp, Protocol protocol, Activity activity){
         this.id = id;
+        this.timestamp = timestamp;
         this.protocol = protocol;
         this.activity = activity;
     }

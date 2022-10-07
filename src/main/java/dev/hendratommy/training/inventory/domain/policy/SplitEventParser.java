@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 import java.util.Arrays;
 
-public class SplitEventParser implements EventParser{
+public class SplitEventParser implements EventParser {
     @Override
     public Event parseEvent(String event) {
         var fields = Arrays.asList(event.split(" "));
@@ -19,6 +19,6 @@ public class SplitEventParser implements EventParser{
         var protocol = Protocol.valueOf(fields.get(2));
         var activity = new Activity(fields.get(3), fields.get(5));
 
-        return new Event(timestamp,id, protocol, activity);
+        return new Event(id, timestamp, protocol, activity);
     }
 }

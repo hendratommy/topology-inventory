@@ -29,6 +29,6 @@ public class RegexEventParser implements EventParser{
         var protocol = Protocol.valueOf(matcher.group(2));
         var activity = new Activity(matcher.group(3), matcher.group(5));
 
-        return new Event(timestamp, id, protocol, activity);
+        return new Event(id, timestamp, protocol, activity);
     }
 }

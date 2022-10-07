@@ -12,9 +12,9 @@ public class RouterSearchTest {
     @Test
     void testRetrieveRouter() {
         var routers = new ArrayList<Router>();
-        routers.add(new Router(RouterType.CORE, new RouterId()));
-        routers.add(new Router(RouterType.EDGE, new RouterId()));
-        routers.add(new Router(RouterType.EDGE, new RouterId()));
+        routers.add(new Router(new RouterId(), RouterType.CORE));
+        routers.add(new Router(new RouterId(), RouterType.EDGE));
+        routers.add(new Router(new RouterId(), RouterType.EDGE));
 
         var cores = RouterSearch.retrieveRouter(routers, Router.filterRouterByType(RouterType.CORE));
         assert cores != null : "CORE routers should not be null";

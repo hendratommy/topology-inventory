@@ -9,15 +9,13 @@ import java.util.List;
 import java.util.function.Predicate;
 
 public class Router {
-
-    private final RouterType routerType;
-
     private final RouterId routerId;
+    private final RouterType routerType;
     private Switch networkSwitch;
 
-    public Router(RouterType routerType, RouterId routerId) {
-        this.routerType = routerType;
+    public Router(RouterId routerId, RouterType routerType) {
         this.routerId = routerId;
+        this.routerType = routerType;
     }
 
     public Router(RouterType routerType, RouterId routerId, Switch networkSwitch) {

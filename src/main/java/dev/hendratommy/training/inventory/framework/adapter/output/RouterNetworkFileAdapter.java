@@ -40,7 +40,7 @@ public class RouterNetworkFileAdapter implements RouterNetworkOutputPort {
     private void createSampleRouter() {
         var routerId = new RouterId("ca23800e-9b5a-11eb-a8b3-0242ac130003");
         var network = new Network(new IP("10.0.0.0"), "HR", 8);
-        var networkSwitch = new Switch(SwitchType.LAYER3, new SwitchId(), List.of(network), new IP("9.0.0.9"));
+        var networkSwitch = new Switch(new SwitchId(), SwitchType.LAYER3, List.of(network), new IP("9.0.0.9"));
         var router = new Router(RouterType.EDGE, routerId, networkSwitch);
         routers.add(router);
     }

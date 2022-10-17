@@ -17,6 +17,14 @@ public class IP {
         }
     }
 
+    public String getIPAddress() {
+        return address;
+    }
+
+    public Protocol getProtocol() {
+        return protocol;
+    }
+
     @Override
     public String toString() {
         return new StringBuilder("IP{")

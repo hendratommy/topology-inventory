@@ -10,10 +10,10 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Switch {
-    private SwitchId switchId;
-    private SwitchType switchType;
-    private List<Network> networks;
-    private IP address;
+    private final SwitchId switchId;
+    private final SwitchType switchType;
+    private final List<Network> networks;
+    private final IP address;
 
     public Switch(SwitchId switchId, SwitchType switchType, List<Network> networks, IP address) {
         this.switchId = switchId;
@@ -30,6 +30,18 @@ public class Switch {
 
     public List<Network> getNetworks() {
         return networks;
+    }
+
+    public SwitchId getSwitchId() {
+        return switchId;
+    }
+
+    public SwitchType getSwitchType() {
+        return switchType;
+    }
+
+    public IP getAddress() {
+        return address;
     }
 
     @Override

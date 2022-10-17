@@ -13,7 +13,7 @@ public class RouterId {
         this.id = UUID.fromString(id);
     }
 
-    public UUID getId() {
+    public UUID getUUID() {
         return id;
     }
 

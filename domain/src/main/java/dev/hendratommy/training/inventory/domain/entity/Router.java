@@ -39,12 +39,16 @@ public class Router {
         return networkSwitch.getNetworks();
     }
 
-    public RouterId getRouterId() {
+    public RouterId getId() {
         return routerId;
     }
 
     public boolean isType(RouterType type) {
         return this.type == type;
+    }
+
+    public Switch getNetworkSwitch() {
+        return networkSwitch;
     }
 
     @Override

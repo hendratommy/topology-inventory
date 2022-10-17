@@ -56,7 +56,7 @@ public class RouterRepositoryFileAdapter implements RouterRepository {
     public Router findById(RouterId routerId) {
         Router retrievedRouter = null;
         for(Router router: routers){
-            if(router.getRouterId().getId().equals(routerId.getId())){
+            if(router.getId().getUUID().equals(routerId.getUUID())){
                 retrievedRouter = router;
                 break;
             }

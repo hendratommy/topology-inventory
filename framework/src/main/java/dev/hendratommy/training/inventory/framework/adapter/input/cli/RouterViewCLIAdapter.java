@@ -8,7 +8,7 @@ import io.quarkus.logging.Log;
 import java.util.List;
 
 public class RouterViewCLIAdapter {
-    RouterViewUseCase routerViewUseCase;
+    private final RouterViewUseCase routerViewUseCase;
 
     public RouterViewCLIAdapter(RouterViewUseCase routerViewUseCase) {
         this.routerViewUseCase = routerViewUseCase;
@@ -18,16 +18,21 @@ public class RouterViewCLIAdapter {
         return routerViewUseCase.getRelatedRouters(RouterType.valueOf(type));
     }
 
-
-    public void run(String... args) {
+    public List<Router> run(String... args) {
         if (args[0].equals("-t") && args.length == 2) {
             try {
-                var type = RouterType.valueOf(args[1]);
+                var routers = obtainRelatedRouters(args[1]);
+                routers.stream().forEach(router -> {
+                    Log.info(router);
+                });
+                return routers;
             } catch (IllegalArgumentException e) {
                 Log.error("Unrecognized router type: " + args[1] + ": should be CORE or EDGE");
+                throw e;
             }
         } else {
-            Log.info("Usage: -t [CORE|EDGE]");
+            Log.warn("Usage: -t [CORE|EDGE]");
+            throw new IllegalArgumentException("Usage: -t [CORE|EDGE]");
         }
     }
 }

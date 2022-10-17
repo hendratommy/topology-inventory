@@ -13,6 +13,10 @@ public class SwitchId {
         this.id = UUID.fromString(id);
     }
 
+    public UUID getUUID() {
+        return id;
+    }
+
     @Override
     public String toString() {
         return new StringBuilder("SwitchId{")

@@ -8,7 +8,6 @@ import dev.hendratommy.training.inventory.domain.specification.RouterTypeSpecifi
 import dev.hendratommy.training.inventory.domain.vo.Network;
 
 public class NetworkOperation {
-
     public static Router createNewNetwork(Router router, Network network) {
         var availabilitySpec = new NetworkAvailabilitySpecification(network.getAddress(), network.getName(), network.getCidr());
         var cidrSpec = new CIDRSpecification();

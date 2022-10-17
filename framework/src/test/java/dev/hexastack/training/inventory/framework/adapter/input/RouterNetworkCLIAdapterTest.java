@@ -16,7 +16,6 @@ public class RouterNetworkCLIAdapterTest {
 
     @Test
     public void testAddNetwork() {
-//        var cli = new RouterNetworkCLIAdapter(new RouterNetworkService(RouterRepositoryFileAdapter.getInstance()));
         var routerId = new RouterId("ca23800e-9b5a-11eb-a8b3-0242ac130003");
         var network = new Network(new IP("20.0.0.0"), "Marketing", 8);
         var router = cli.addNetwork(routerId, network);
@@ -26,7 +25,6 @@ public class RouterNetworkCLIAdapterTest {
 
     @Test
     public void testRun() {
-//        var cli = new RouterNetworkCLIAdapter(new RouterNetworkService(RouterRepositoryFileAdapter.getInstance()));
         var router = cli.run("-r", "ca23800e-9b5a-11eb-a8b3-0242ac130003", "-i", "20.0.0.0", "-n", "Marketing", "-c", "8");
         assert router != null : "router should not be null";
         System.out.println(router);

@@ -12,10 +12,10 @@ import io.quarkus.logging.Log;
 
 import java.util.HashMap;
 
-public class RouterNetworkCLIAdapter {
+public class RouterNetworkCliAdapter {
     private final RouterNetworkUseCase routerNetworkUseCase;
 
-    public RouterNetworkCLIAdapter(RouterNetworkUseCase routerNetworkUseCase) {
+    public RouterNetworkCliAdapter(RouterNetworkUseCase routerNetworkUseCase) {
         this.routerNetworkUseCase = routerNetworkUseCase;
     }
 

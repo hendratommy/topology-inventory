@@ -7,10 +7,10 @@ import io.quarkus.logging.Log;
 
 import java.util.List;
 
-public class RouterViewCLIAdapter {
+public class RouterViewCliAdapter {
     private final RouterViewUseCase routerViewUseCase;
 
-    public RouterViewCLIAdapter(RouterViewUseCase routerViewUseCase) {
+    public RouterViewCliAdapter(RouterViewUseCase routerViewUseCase) {
         this.routerViewUseCase = routerViewUseCase;
     }
 

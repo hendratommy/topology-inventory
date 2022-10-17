@@ -3,16 +3,16 @@ package dev.hexastack.training.inventory.framework.adapter.input;
 import dev.hendratommy.training.inventory.domain.vo.IP;
 import dev.hendratommy.training.inventory.domain.vo.Network;
 import dev.hendratommy.training.inventory.domain.vo.RouterId;
-import dev.hendratommy.training.inventory.framework.adapter.input.cli.RouterNetworkCLIAdapter;
+import dev.hendratommy.training.inventory.framework.adapter.input.cli.RouterNetworkCliAdapter;
 import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.Test;
 
 import javax.inject.Inject;
 
 @QuarkusTest
-public class RouterNetworkCLIAdapterTest {
+public class RouterNetworkCliAdapterTest {
     @Inject
-    RouterNetworkCLIAdapter cli;
+    RouterNetworkCliAdapter cli;
 
     @Test
     public void testAddNetwork() {

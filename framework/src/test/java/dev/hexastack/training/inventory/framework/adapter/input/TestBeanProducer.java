@@ -14,7 +14,7 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Produces;
 
 @ApplicationScoped
-public class BeanProducer {
+public class TestBeanProducer {
     @Produces
     RouterRepository routerRepository() {
         return RouterRepositoryFileAdapter.getInstance();

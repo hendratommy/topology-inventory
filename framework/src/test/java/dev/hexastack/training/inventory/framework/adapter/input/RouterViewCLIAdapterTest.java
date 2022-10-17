@@ -7,12 +7,14 @@ import dev.hendratommy.training.inventory.framework.adapter.output.RouterReposit
 import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.Test;
 
+import javax.inject.Inject;
+
 @QuarkusTest
 public class RouterViewCLIAdapterTest {
+    @Inject
+    RouterViewCLIAdapter cli;
     @Test
     void testObtainRelatedRoutersByType() {
-        var routerViewUseCase = new RouterViewService(RouterRepositoryFileAdapter.getInstance(), new RouterSearch());
-        var cli = new RouterViewCLIAdapter(routerViewUseCase);
         var cores = cli.obtainRelatedRouters("CORE");
         assert cores != null : "CORE routers should not be null";
         assert cores.size() == 1 : "CORE routers size should equals 1";
@@ -24,8 +26,6 @@ public class RouterViewCLIAdapterTest {
 
     @Test
     void testRun() {
-        var routerViewUseCase = new RouterViewService(RouterRepositoryFileAdapter.getInstance(), new RouterSearch());
-        var cli = new RouterViewCLIAdapter(routerViewUseCase);
         var cores = cli.run("-t", "CORE");
         assert cores != null : "CORE routers should not be null";
         assert cores.size() == 1 : "CORE routers size should equals 1";

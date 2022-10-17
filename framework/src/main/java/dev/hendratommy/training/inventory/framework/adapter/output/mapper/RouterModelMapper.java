@@ -24,15 +24,15 @@ public class RouterModelMapper {
 
     public static RouterModel toJson(Router router) {
         var routerId = router.getId().getUUID();
-        var routerTypeJson = RouterTypeModel.valueOf(router.getType().toString());
-        var switchIdJson = router.getNetworkSwitch().getSwitchId().getUUID();
-        var switchTypeJson = SwitchTypeModel.valueOf(router.getNetworkSwitch().getSwitchType().toString());
-        var ipJson = new IPModel(router.getNetworkSwitch().getAddress().getIPAddress());
+        var routerTypeModel = RouterTypeModel.valueOf(router.getType().toString());
+        var switchId = router.getNetworkSwitch().getSwitchId().getUUID();
+        var switchTypeModel = SwitchTypeModel.valueOf(router.getNetworkSwitch().getSwitchType().toString());
+        var ipModel = new IPModel(router.getNetworkSwitch().getAddress().getIPAddress());
         var networkDataList = getNetworksFromDomain(router.retrieveNetworks());
 
-        var switchModel = new SwitchModel(switchIdJson, ipJson, switchTypeJson, networkDataList);
+        var switchModel = new SwitchModel(switchId, ipModel, switchTypeModel, networkDataList);
 
-        return new RouterModel(routerId, routerTypeJson, switchModel);
+        return new RouterModel(routerId, routerTypeModel, switchModel);
     }
 
     private static List<Network> getNetworksFromJson(List<NetworkModel> networkModels) {

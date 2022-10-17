@@ -14,7 +14,7 @@ public class NetworkOperation {
         var routerTypeSpec = new RouterTypeSpecification();
         var amountSpec = new NetworkAmountSpecification();
 
-        if(cidrSpec.isSatisfiedBy(network.getCidr()))
+        if(!cidrSpec.isSatisfiedBy(network.getCidr()))
             throw new IllegalArgumentException("CIDR is below "+CIDRSpecification.MINIMUM_ALLOWED_CIDR);
 
         if(!availabilitySpec.isSatisfiedBy(router))

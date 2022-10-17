@@ -12,14 +12,10 @@ public class IPModel {
     private ProtocolModel protocol;
 
     public IPModel(String address){
-        if(address == null)
+        if(address == null) {
             throw new IllegalArgumentException("Null IP address");
-        this.address = address;
-        if(address.length()<=15) {
-            this.protocol = ProtocolModel.IPV4;
-        } else {
-            this.protocol = ProtocolModel.IPV6;
         }
+        setAddress(address);
     }
 
     public String getAddress() {
@@ -28,6 +24,11 @@ public class IPModel {
 
     public void setAddress(String address) {
         this.address = address;
+        if(address.length() <= 15) {
+            this.protocol = ProtocolModel.IPV4;
+        } else {
+            this.protocol = ProtocolModel.IPV6;
+        }
     }
 
     public ProtocolModel getProtocol() {

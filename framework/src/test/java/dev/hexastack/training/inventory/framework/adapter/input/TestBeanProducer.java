@@ -8,11 +8,9 @@ import dev.hendratommy.training.inventory.application.usecase.RouterViewUseCase;
 import dev.hendratommy.training.inventory.domain.service.RouterSearch;
 import dev.hendratommy.training.inventory.framework.adapter.input.cli.RouterNetworkCliAdapter;
 import dev.hendratommy.training.inventory.framework.adapter.input.cli.RouterViewCliAdapter;
-import dev.hendratommy.training.inventory.framework.adapter.input.rest.RouterNetworkRestAdapter;
-import dev.hendratommy.training.inventory.framework.adapter.output.RouterRepositoryFileAdapter;
+import dev.hendratommy.training.inventory.framework.adapter.output.file.RouterRepositoryFileAdapter;
 
 import javax.enterprise.context.ApplicationScoped;
-import javax.enterprise.context.RequestScoped;
 import javax.enterprise.inject.Produces;
 
 @ApplicationScoped
@@ -45,12 +43,6 @@ public class TestBeanProducer {
     @Produces
     RouterViewCliAdapter routerViewCLIAdapter(RouterViewUseCase useCase) {
         return new RouterViewCliAdapter(useCase);
-    }
-
-    @Produces
-    @RequestScoped
-    RouterNetworkRestAdapter routerNetworkRestAdapter(RouterNetworkUseCase useCase) {
-        return new RouterNetworkRestAdapter(useCase);
     }
 
 }

@@ -1,4 +1,4 @@
-package dev.hendratommy.training.inventory.framework.adapter.output.model;
+package dev.hendratommy.training.inventory.framework.adapter.output.file.json;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -7,20 +7,20 @@ import java.util.List;
 import java.util.UUID;
 
 @JsonInclude(value = JsonInclude.Include.NON_NULL)
-public class SwitchModel {
+public class SwitchJson {
     @JsonProperty("switchId")
     private UUID switchId;
 
     @JsonProperty("ip")
-    private IPModel ip;
+    private IPJson ip;
 
     @JsonProperty("switchType")
-    private SwitchTypeModel switchType;
+    private SwitchTypeJson switchType;
 
     @JsonProperty("networks")
-    private List<NetworkModel> networks;
+    private List<NetworkJson> networks;
 
-    public SwitchModel(UUID switchId, IPModel ip, SwitchTypeModel switchType, List<NetworkModel> networks) {
+    public SwitchJson(UUID switchId, IPJson ip, SwitchTypeJson switchType, List<NetworkJson> networks) {
         this.switchId = switchId;
         this.ip = ip;
         this.switchType = switchType;
@@ -35,27 +35,27 @@ public class SwitchModel {
         this.switchId = switchId;
     }
 
-    public IPModel getIp() {
+    public IPJson getIp() {
         return ip;
     }
 
-    public void setIp(IPModel ip) {
+    public void setIp(IPJson ip) {
         this.ip = ip;
     }
 
-    public SwitchTypeModel getSwitchType() {
+    public SwitchTypeJson getSwitchType() {
         return switchType;
     }
 
-    public void setSwitchType(SwitchTypeModel switchType) {
+    public void setSwitchType(SwitchTypeJson switchType) {
         this.switchType = switchType;
     }
 
-    public List<NetworkModel> getNetworks() {
+    public List<NetworkJson> getNetworks() {
         return networks;
     }
 
-    public void setNetworks(List<NetworkModel> networks) {
+    public void setNetworks(List<NetworkJson> networks) {
         this.networks = networks;
     }
 }

@@ -7,7 +7,7 @@ import dev.hendratommy.training.inventory.domain.entity.Router;
 import dev.hendratommy.training.inventory.domain.vo.IP;
 import dev.hendratommy.training.inventory.domain.vo.Network;
 import dev.hendratommy.training.inventory.domain.vo.RouterId;
-import dev.hendratommy.training.inventory.framework.adapter.output.mapper.RouterModelMapper;
+import dev.hendratommy.training.inventory.framework.adapter.output.file.mapper.RouterJsonMapper;
 import io.quarkus.logging.Log;
 
 import java.util.HashMap;
@@ -55,7 +55,7 @@ public class RouterNetworkCliAdapter {
                 var router = addNetwork(routerId, network);
 
                 var mapper = new ObjectMapper();
-                var routerJson = mapper.writeValueAsString(RouterModelMapper.toJson(router));
+                var routerJson = mapper.writeValueAsString(RouterJsonMapper.toJson(router));
                 Log.info(routerJson);
 
                 return router;

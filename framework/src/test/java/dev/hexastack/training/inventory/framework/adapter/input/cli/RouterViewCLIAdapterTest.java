@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import javax.inject.Inject;
 
 @QuarkusTest
-public class RouterViewCliAdapterTest {
+public class RouterViewCLIAdapterTest {
     @Inject
     RouterViewCliAdapter cli;
     @Test

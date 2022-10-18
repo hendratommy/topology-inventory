@@ -1,4 +1,4 @@
-package dev.hendratommy.training.inventory.framework.adapter.output;
+package dev.hendratommy.training.inventory.framework.adapter.output.file;
 
 import dev.hendratommy.training.inventory.application.repository.RouterRepository;
 import dev.hendratommy.training.inventory.domain.entity.Router;

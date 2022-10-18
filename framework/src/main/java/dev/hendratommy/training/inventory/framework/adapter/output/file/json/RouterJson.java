@@ -1,4 +1,4 @@
-package dev.hendratommy.training.inventory.framework.adapter.output.model;
+package dev.hendratommy.training.inventory.framework.adapter.output.file.json;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -6,17 +6,17 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.UUID;
 
 @JsonInclude(value = JsonInclude.Include.NON_NULL)
-public class RouterModel {
+public class RouterJson {
     @JsonProperty("routerId")
     private UUID routerId;
 
     @JsonProperty("routerType")
-    private RouterTypeModel routerType;
+    private RouterTypeJson routerType;
 
     @JsonProperty("switch")
-    private SwitchModel networkSwitch;
+    private SwitchJson networkSwitch;
 
-    public RouterModel(UUID routerId, RouterTypeModel routerType, SwitchModel networkSwitch) {
+    public RouterJson(UUID routerId, RouterTypeJson routerType, SwitchJson networkSwitch) {
         this.routerId = routerId;
         this.routerType = routerType;
         this.networkSwitch = networkSwitch;
@@ -30,19 +30,19 @@ public class RouterModel {
         this.routerId = routerId;
     }
 
-    public RouterTypeModel getRouterType() {
+    public RouterTypeJson getRouterType() {
         return routerType;
     }
 
-    public void setRouterType(RouterTypeModel routerType) {
+    public void setRouterType(RouterTypeJson routerType) {
         this.routerType = routerType;
     }
 
-    public SwitchModel getNetworkSwitch() {
+    public SwitchJson getNetworkSwitch() {
         return networkSwitch;
     }
 
-    public void setNetworkSwitch(SwitchModel networkSwitch) {
+    public void setNetworkSwitch(SwitchJson networkSwitch) {
         this.networkSwitch = networkSwitch;
     }
 }

@@ -8,7 +8,7 @@ import dev.hendratommy.training.inventory.application.usecase.RouterViewUseCase;
 import dev.hendratommy.training.inventory.domain.service.RouterSearch;
 import dev.hendratommy.training.inventory.framework.adapter.input.cli.RouterNetworkCLIAdapter;
 import dev.hendratommy.training.inventory.framework.adapter.input.cli.RouterViewCLIAdapter;
-import dev.hendratommy.training.inventory.framework.adapter.output.RouterRepositoryFileAdapter;
+import dev.hendratommy.training.inventory.framework.adapter.output.file.RouterRepositoryFileAdapter;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Produces;

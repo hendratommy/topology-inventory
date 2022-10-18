@@ -1,9 +1,6 @@
 package dev.hexastack.training.inventory.framework.adapter.input;
 
-import dev.hendratommy.training.inventory.application.service.RouterViewService;
-import dev.hendratommy.training.inventory.domain.service.RouterSearch;
 import dev.hendratommy.training.inventory.framework.adapter.input.cli.RouterViewCLIAdapter;
-import dev.hendratommy.training.inventory.framework.adapter.output.RouterRepositoryFileAdapter;
 import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.Test;
 

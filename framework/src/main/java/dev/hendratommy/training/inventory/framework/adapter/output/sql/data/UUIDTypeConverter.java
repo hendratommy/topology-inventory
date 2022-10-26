@@ -6,7 +6,7 @@ import java.util.UUID;
 
 import java.util.Optional;
 
-@Converter(autoApply = true)
+@Converter
 public class UUIDTypeConverter implements AttributeConverter<UUID, String> {
     @Override
     public String convertToDatabaseColumn(final UUID entityValue) {

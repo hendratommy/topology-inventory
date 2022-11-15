@@ -7,6 +7,7 @@ import dev.hendratommy.training.inventory.framework.adapter.output.sql.mapper.Ro
 import dev.hendratommy.training.inventory.framework.adapter.output.sql.repository.RouterDataRepository;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class RouterRepositorySqlAdapter implements RouterRepository {
     private RouterDataRepository repository;
@@ -17,7 +18,7 @@ public class RouterRepositorySqlAdapter implements RouterRepository {
 
     @Override
     public List<Router> findAll() {
-        return repository.findAll().stream().map(routerData -> RouterDataMapper.toDomain(routerData)).toList();
+        return repository.findAll().stream().map(routerData -> RouterDataMapper.toDomain(routerData)).collect(Collectors.toList());
     }
 
     @Override

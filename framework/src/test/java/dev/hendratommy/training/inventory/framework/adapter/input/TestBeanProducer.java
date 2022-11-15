@@ -1,4 +1,4 @@
-package dev.hexastack.training.inventory.framework.adapter.input;
+package dev.hendratommy.training.inventory.framework.adapter.input;
 
 import dev.hendratommy.training.inventory.application.repository.RouterRepository;
 import dev.hendratommy.training.inventory.application.service.RouterNetworkService;

@@ -1,4 +1,4 @@
-package dev.hexastack.training.inventory.framework.adapter.input.cli;
+package dev.hendratommy.training.inventory.framework.adapter.input.cli;
 
 import dev.hendratommy.training.inventory.framework.adapter.input.cli.RouterViewCliAdapter;
 import io.quarkus.test.junit.QuarkusTest;

@@ -1,17 +1,13 @@
 package dev.hendratommy.training.inventory.framework.adapter.output.sql.data;
 
 import javax.persistence.*;
-import java.io.Serial;
 import java.io.Serializable;
 import java.util.List;
 import java.util.UUID;
 
 @Entity
 @Table(name = "switches")
-@SecondaryTable(name = "networks")
-@MappedSuperclass
 public class SwitchData implements Serializable {
-    @Serial
     private static final long serialVersionUID = -3481707626785416063L;
 
     @Id
@@ -26,12 +22,11 @@ public class SwitchData implements Serializable {
     private UUID routerId;
 
     @Enumerated(EnumType.STRING)
-    @Embedded
     @Column(name = "switch_type")
     private SwitchTypeData switchType;
 
     @OneToMany
-    @JoinColumn(table = "networks",
+    @JoinColumn(
             name = "switch_id",
             referencedColumnName = "switch_id")
     private List<NetworkData> networks;

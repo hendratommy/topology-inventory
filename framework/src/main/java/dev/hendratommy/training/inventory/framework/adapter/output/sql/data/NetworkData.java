@@ -1,17 +1,15 @@
 package dev.hendratommy.training.inventory.framework.adapter.output.sql.data;
 
 import javax.persistence.*;
-import java.io.Serial;
 import java.io.Serializable;
 import java.util.UUID;
 
 @Entity
 @Table(name = "networks")
-@MappedSuperclass
 public class NetworkData implements Serializable {
-    @Serial
     private static final long serialVersionUID = 1645955024022350226L;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="network_id")
     private int id;
 

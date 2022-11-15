@@ -9,6 +9,6 @@ import java.util.stream.Collectors;
 
 public class RouterSearch {
     public List<Router> retrieveRouter(RouterType type, List<Router> routers) {
-        return routers.stream().filter(router -> router.isType(type)).toList();
+        return routers.stream().filter(router -> router.isType(type)).collect(Collectors.toList());
     }
 }

@@ -6,8 +6,6 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "routers")
-@SecondaryTable(name = "switches")
-@MappedSuperclass
 public class RouterData implements Serializable {
 
     @Id
@@ -17,7 +15,7 @@ public class RouterData implements Serializable {
     @Convert(converter = UUIDTypeConverter.class)
     private UUID routerId;
 
-    @Embedded
+//    @Embedded
     @Enumerated(EnumType.STRING)
     @Column(name="router_type")
     private RouterTypeData routerType;

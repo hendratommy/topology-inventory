@@ -1,7 +1,6 @@
 package dev.hendratommy.training.inventory.framework.adapter.output.sql.data;
 
 import javax.persistence.Embeddable;
-import javax.persistence.Embedded;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 
@@ -11,7 +10,6 @@ public class IPData {
     private String address;
 
     @Enumerated(EnumType.STRING)
-    @Embedded
     private ProtocolData protocol;
 
     public IPData(String address){

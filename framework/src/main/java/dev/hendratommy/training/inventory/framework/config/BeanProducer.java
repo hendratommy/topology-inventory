@@ -13,6 +13,7 @@ import dev.hendratommy.training.inventory.framework.adapter.output.sql.RouterRep
 import dev.hendratommy.training.inventory.framework.adapter.output.sql.repository.RouterDataRepository;
 import io.quarkus.arc.DefaultBean;
 import io.quarkus.arc.profile.IfBuildProfile;
+import io.quarkus.logging.Log;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.context.Dependent;
@@ -32,12 +33,14 @@ public class BeanProducer {
     @IfBuildProfile("sql")
     @ApplicationScoped
     RouterDataRepository routerDataRepository() {
+        Log.info("Using SQL");
         return new RouterDataRepository();
     }
 
     @Produces
     @IfBuildProfile("sql")
     RouterRepository routerSqlRepository(RouterDataRepository routerDataRepository) {
+        Log.info("Using SQL");
         return new RouterRepositorySqlAdapter(routerDataRepository);
     }
 

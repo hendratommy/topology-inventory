@@ -1,4 +1,4 @@
-package dev.hexastack.training.inventory.framework.adapter.input.rest;
+package dev.hendratommy.training.inventory.framework.adapter.input.rest;
 
 import io.quarkus.test.junit.QuarkusTest;
 import io.restassured.http.ContentType;
@@ -19,6 +19,11 @@ public class RouterNetworkRestAdapterTest {
                     "cidr": 9
                 }
                 """;
+//        String json = "{ \"routerId\": \"ca23800e-9b5a-11eb-a8b3-0242ac130003\", " +
+//                    "\"address\": \"20.0.0.0\", " +
+//                    "\"name\": \"Marketing\", " +
+//                    "\"cidr\": 9 " +
+//                "}";
         given()
                 .contentType(ContentType.JSON)
                 .body(json)

@@ -6,12 +6,10 @@ import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
-import java.io.Serial;
 import java.io.Serializable;
 
 @JsonInclude(value = JsonInclude.Include.NON_NULL)
 public class AddNetworkModel implements Serializable {
-    @Serial
     private static final long serialVersionUID = -9174400330563327744L;
 
     @NotEmpty(message = "required")

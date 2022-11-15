@@ -1,4 +1,4 @@
-package dev.hexastack.training.inventory.domain.service;
+package dev.hendratommy.training.inventory.domain.service;
 
 import dev.hendratommy.training.inventory.domain.entity.Router;
 import dev.hendratommy.training.inventory.domain.service.RouterSearch;

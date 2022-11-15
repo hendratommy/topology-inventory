@@ -4,6 +4,7 @@ import dev.hendratommy.training.inventory.domain.entity.Router;
 import dev.hendratommy.training.inventory.domain.entity.Switch;
 import dev.hendratommy.training.inventory.domain.vo.*;
 import dev.hendratommy.training.inventory.framework.adapter.output.sql.data.*;
+import io.quarkus.logging.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +13,7 @@ import java.util.UUID;
 public class RouterDataMapper {
 
     public static Router toDomain(RouterData routerData){
+        Log.info("routerId: " + routerData.getRouterId().toString());
         var routerType = RouterType.valueOf(routerData.getRouterType().name());
         var routerId = new RouterId(routerData.getRouterId().toString());
         var switchId = new SwitchId(routerData.getNetworkSwitch().getSwitchId().toString());
@@ -30,17 +32,23 @@ public class RouterDataMapper {
         var switchId = router.getNetworkSwitch().getSwitchId().getUUID();
         var switchTypeData = SwitchTypeData.valueOf(router.getNetworkSwitch().getSwitchType().toString());
         var ipData = new IPData(router.getNetworkSwitch().getAddress().getIPAddress());
-        var networkDataList = getNetworksFromDomain(router.retrieveNetworks(), routerId);
+        var networkDataList = getNetworksFromDomain(router.retrieveNetworks(), switchId);
 
         var switchData = new SwitchData(
-                routerId,
                 switchId,
+                routerId,
                 switchTypeData,
                 networkDataList,
                 ipData);
         return new RouterData(routerId, routerTypeData, switchData);
     }
 
+    public static void mapToH2(RouterData routerData, Router router) {
+        var switchData = routerData.getNetworkSwitch();
+        if (switchData == null) {
+
+        }
+    }
 
 
     private static List<Network> getNetworksFromData(List<NetworkData> networkData){

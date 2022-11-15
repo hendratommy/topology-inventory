@@ -1,16 +1,18 @@
 package dev.hendratommy.training.inventory.framework.adapter.input.cli;
 
-import dev.hendratommy.training.inventory.framework.adapter.input.cli.RouterViewCliAdapter;
 import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.Test;
 
 import javax.inject.Inject;
+import javax.transaction.Transactional;
 
 @QuarkusTest
 public class RouterViewCLIAdapterTest {
     @Inject
     RouterViewCliAdapter cli;
+
     @Test
+    @Transactional
     void testObtainRelatedRoutersByType() {
         var cores = cli.obtainRelatedRouters("CORE");
         assert cores != null : "CORE routers should not be null";
@@ -22,6 +24,7 @@ public class RouterViewCLIAdapterTest {
     }
 
     @Test
+    @Transactional
     void testRun() {
         var cores = cli.run("-t", "CORE");
         assert cores != null : "CORE routers should not be null";

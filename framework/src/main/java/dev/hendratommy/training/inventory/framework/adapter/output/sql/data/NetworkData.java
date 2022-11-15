@@ -1,5 +1,7 @@
 package dev.hendratommy.training.inventory.framework.adapter.output.sql.data;
 
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.UUID;
@@ -11,10 +13,10 @@ public class NetworkData implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="network_id")
-    private int id;
+    private Long id;
 
     @Column(name="switch_id")
-    @Convert(converter = UUIDTypeConverter.class)
+    @Type(type = "org.hibernate.type.UUIDCharType")
     private UUID switchId;
 
     @Embedded
@@ -45,7 +47,7 @@ public class NetworkData implements Serializable {
 
     protected NetworkData() {}
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 

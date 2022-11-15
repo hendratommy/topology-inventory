@@ -29,20 +29,7 @@ public class BeanProducer {
         return RouterRepositoryFileAdapter.getInstance();
     }
 
-    @Produces
-    @IfBuildProfile("sql")
-    @ApplicationScoped
-    RouterDataRepository routerDataRepository() {
-        Log.info("Using SQL");
-        return new RouterDataRepository();
-    }
 
-    @Produces
-    @IfBuildProfile("sql")
-    RouterRepository routerSqlRepository(RouterDataRepository routerDataRepository) {
-        Log.info("Using SQL");
-        return new RouterRepositorySqlAdapter(routerDataRepository);
-    }
 
     @Produces
     RouterNetworkUseCase routerNetworkUseCase(RouterRepository routerRepository) {

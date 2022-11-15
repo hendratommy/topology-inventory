@@ -1,5 +1,7 @@
 package dev.hendratommy.training.inventory.framework.adapter.output.sql.data;
 
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
@@ -10,25 +12,25 @@ import java.util.UUID;
 public class SwitchData implements Serializable {
     private static final long serialVersionUID = -3481707626785416063L;
 
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "router_id")
+    private RouterData routerData;
+
     @Id
-    @Column(name="switch_id",
-            columnDefinition = "uuid",
-            updatable = false )
-    @Convert(converter = UUIDTypeConverter.class)
+    @Column(name="switch_id", updatable = false)
+    @Type(type = "org.hibernate.type.UUIDCharType")
     private UUID switchId;
 
-    @Column(name="router_id")
-    @Convert(converter = UUIDTypeConverter.class)
+    @Column(name="router_id", insertable = false, updatable = false)
+    @Type(type = "org.hibernate.type.UUIDCharType")
     private UUID routerId;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "switch_type")
     private SwitchTypeData switchType;
 
-    @OneToMany
-    @JoinColumn(
-            name = "switch_id",
-            referencedColumnName = "switch_id")
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "switch_id", referencedColumnName = "switch_id")
     private List<NetworkData> networks;
 
     @Embedded
@@ -72,5 +74,10 @@ public class SwitchData implements Serializable {
 
     public IPData getIp() {
         return ip;
+    }
+
+    protected void setRouterData(RouterData routerData) {
+        this.routerData = routerData;
+        this.routerId = routerData.getRouterId();
     }
 }

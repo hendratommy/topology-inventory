@@ -26,7 +26,7 @@ public class RouterNetworkService implements RouterNetworkUseCase {
 
     private Router createNetwork(Router router, Network network) {
         var newRouter = NetworkOperation.createNewNetwork(router, network);
-        return persistNetwork(router);
+        return persistNetwork(newRouter);
     }
 
     private Router persistNetwork(Router router) {
